@@ -3,137 +3,141 @@
 import { useState } from "react";
 
 interface ScheduleItem {
-  time: string;
+  duration: string;
   title: string;
   desc: string;
   focus: string;
 }
 
-interface DayData {
-  day: number;
-  phase: string;
-  summary: string;
+interface PhaseData {
+  weeks: string;
+  title: string;
+  sub: string;
   sensoryNote: string;
+  socialGoal: string;
   schedule: ScheduleItem[];
   milestone: string;
 }
 
-const DAYS_DATA: DayData[] = [
+const PHASES_DATA: PhaseData[] = [
   {
-    day: 1,
-    phase: "Arrival & Solo Mechanics",
-    summary: "Focus on getting familiar with the environment, holding the ball, and running basic patterns. Zero social pressure.",
-    sensoryNote: "Whistle-free coaching today. High-contrast visual markers define all boundaries. Soft-touch foam footballs are used.",
-    milestone: "Run your first solo route and receive a personal welcome pack.",
+    weeks: "Weeks 1–4",
+    title: "Phase 1: Individual Mechanics",
+    sub: "Get familiar with the field, build physical throwing/catching habits, and learn route concepts in your own personal space with zero social demands.",
+    sensoryNote: "Whistle-free coaching. Boundaries are defined with high-contrast colored markers. Soft-grip foam footballs are used to reduce sensory impact.",
+    socialGoal: "Learn coach faces, establish visual communication check-ins, and build comfort with the physical field routine.",
+    milestone: "Master the 3 basic route cuts (Slant, Out, Go) and claim your visual playbook binder.",
     schedule: [
       {
-        time: "09:30 AM",
-        title: "Quiet Arrival & Personal Spot",
-        desc: "Check-in at your own pace. Choose a color-coded wristband to indicate your communication preference (e.g. Green = ready to chat, Yellow = silent learning).",
-        focus: "Familiarization",
+        duration: "10 Mins",
+        title: "Visual Check-in & Orientation",
+        desc: "Check-in at your own pace. Select a colored wristband indicating your communication comfort level for the day. Review the day's printed visual schedule board.",
+        focus: "Predictability",
       },
       {
-        time: "09:50 AM",
-        title: "Foam Ball Grip & Throwing",
-        desc: "Learn throwing mechanics with step-by-step card instructions. Coaches explain principles individually rather than addressing a large crowd.",
-        focus: "Mechanics",
+        duration: "20 Mins",
+        title: "Solo Ball Mechanics & Catching",
+        desc: "Structured, step-by-step throwing and catching drills. Coaches explain adjustments 1-on-1 rather than addressing a large crowd. Earmuffs welcome.",
+        focus: "Skill Prep",
       },
       {
-        time: "10:30 AM",
-        title: "Solo Route Walks",
-        desc: "Walk and run preset receiver routes (e.g., Slant, Out) marked clearly on the grass with visual indicators. No defenders, no pressure.",
-        focus: "Coordination",
+        duration: "20 Mins",
+        title: "Route Walking & Space Drill",
+        desc: "Walk and run receiver route tracks painted on the grass. Focus on timing and muscle memory. No defenders, no pressure.",
+        focus: "Spatial Awareness",
       },
       {
-        time: "11:00 AM",
-        title: "Sensory Break & Wind-down",
-        desc: "10 minutes in the quiet sensory tent. Optional noise-canceling headphones, water, and direct check-ins with your assigned coach.",
+        duration: "10 Mins",
+        title: "Quiet Sensory Decompression",
+        desc: "Step into the sensory tent to rest. Noise-canceling headphones, cold water, and optional check-ins with your pre-assigned coach are always open.",
         focus: "Decompression",
       },
     ],
   },
   {
-    day: 2,
-    phase: "Structured Partner Play",
-    summary: "Work one-on-one with a designated partner. Coordinated actions with clear visual cues remove the guesswork from interaction.",
-    sensoryNote: "Noise levels are moderate. Partner pairings are pre-assigned by the coaches—no awkward 'picking teammates'.",
-    milestone: "Complete a 2-person route combination and design a custom play card.",
+    weeks: "Weeks 5–8",
+    title: "Phase 2: Partner Sync & Geometry",
+    sub: "Partner up with a pre-assigned teammate. Learn crossing route combinations where precise geometric paths do all the coordination work for you.",
+    sensoryNote: "Coaches speak at conversational volume. Partner pairings are pre-assigned by the staff—never chosen by players, eliminating selection anxiety.",
+    socialGoal: "Build trust with a single 'Huddle Buddy' through pre-scripted coordination and shared play design.",
+    milestone: "Execute a co-designed crossing route with your partner and earn your Team Huddle patch.",
     schedule: [
       {
-        time: "09:30 AM",
-        title: "Structured Partner Match",
-        desc: "Meet your pre-assigned partner. Review your custom name badges and share preferred communication styles (cards or verbal).",
+        duration: "10 Mins",
+        title: "Huddle Buddy Match & Script Sync",
+        desc: "Meet your pre-assigned partner. Review your custom badge preferences and align on preferred communication style (cards or speech).",
         focus: "Social Entry",
       },
       {
-        time: "09:50 AM",
-        title: "Interactive Catch & Move",
-        desc: "Throw and catch with your partner while moving. Coaches provide simple visual route boards to show where and when to pass.",
+        duration: "20 Mins",
+        title: "Interactive Throw-and-Go",
+        desc: "Practice catching on the run from your partner. Follow simple visual cards and timing counters rather than guessing when to cut.",
         focus: "Timing",
       },
       {
-        time: "10:20 AM",
-        title: "Crossing Routes",
-        desc: "Run crossing routes with your partner, learning how two separate running lines create open spaces. Highly visual, structured cooperation.",
-        focus: "Spatial Awareness",
+        duration: "20 Mins",
+        title: "Playbook白板 Coordination",
+        desc: "Co-design a 2-person route combination using chalkboard folders. Walk through the physical routes together to test the pattern.",
+        focus: "Collaboration",
       },
       {
-        time: "10:50 AM",
-        title: "Huddle Strategy Draft",
-        desc: "Sit with your partner and sketch out a customized 2-person play using our tactile whiteboard folders.",
-        focus: "Collaboration",
+        duration: "10 Mins",
+        title: "Cool Down & Peer Review",
+        desc: "Sit with your partner and look at other teams' play designs. Give feedback using simple checkoff icons.",
+        focus: "Bonding",
       },
     ],
   },
   {
-    day: 3,
-    phase: "Low-Pressure Huddle Game",
-    summary: "Put your skills into action in a low-stakes 3-on-3 simulation. Simple rules, visual boundaries, and high predictability.",
-    sensoryNote: "Scrimmage is entirely non-contact. Whistles are replaced with soft electronic buzzers. Visual play cards are held on-field.",
-    milestone: "Execute a co-designed play in a team setting and earn your clinic jersey.",
+    weeks: "Weeks 9–12",
+    title: "Phase 3: The Huddle League",
+    sub: "Form a 3-person team. Apply your routes in low-stakes, non-contact games. Football roles provide complete social structure during play.",
+    sensoryNote: "Games are entirely non-contact. Traditional whistles are replaced with soft buzzer indicators. Play card folders are held on field.",
+    socialGoal: "Experience team alignment. Learn how standard football roles remove ambiguity and make collective success feel natural.",
+    milestone: "Score a team touchdown running a co-designed play and receive your custom Huddle Jersey.",
     schedule: [
       {
-        time: "09:30 AM",
-        title: "Visual Scrimmage Briefing",
-        desc: "Review the full layout of the play field. Learn the roles of each position. All movements are walk-through tested first.",
-        focus: "Predictability",
+        duration: "10 Mins",
+        title: "Team Playbook Huddle",
+        desc: "Assemble in your 3-player huddle. Select your role (e.g. Quarterback, Route Planner, Receiver). Pick the visual play card for the drive.",
+        focus: "Structured Team",
       },
       {
-        time: "09:50 AM",
-        title: "3-on-3 Cooperative Runs",
-        desc: "Run your pre-planned plays. Defending players shadow routes rather than rushing, keeping the environment predictable and safe.",
-        focus: "Active Play",
+        duration: "30 Mins",
+        title: "3-on-3 Cooperative Scrimmage",
+        desc: "Run plays against a defender shadowing your route. No physical rushing or contact. Focus is entirely on executing the drawn play layout.",
+        focus: "Active League",
       },
       {
-        time: "10:30 AM",
-        title: "The Huddle Execution",
-        desc: "Assemble your team in the huddle. Use play cards to decide the route. Execute the play together. Celebrate in whatever style feels best.",
-        focus: "Team Success",
+        duration: "15 Mins",
+        title: "Weekly Achievement Circle",
+        desc: "Celebrate success in whatever style you prefer (silent huddle cheer, thumbs-up, or high-five). Receive custom patches for your visual board.",
+        focus: "Celebration",
       },
       {
-        time: "11:00 AM",
-        title: "Graduation & Jersey Pick",
-        desc: "Receive your custom-fit, high-performance 'Huddle Team' jersey and choosing your team huddle patch for future game sessions.",
-        focus: "Achievement",
+        duration: "5 Mins",
+        title: "Home Quest Review",
+        desc: "Check the phone portal for next week's at-home doomscroll replacement exercises and playbook design homework.",
+        focus: "Continuity",
       },
     ],
   },
 ];
 
 export default function TimelineWalkthrough() {
-  const [selectedDay, setSelectedDay] = useState<number>(1);
-  const currentDayData = DAYS_DATA.find((d) => d.day === selectedDay) || DAYS_DATA[0];
+  const [activePhase, setActivePhase] = useState<number>(0);
+  const currentPhase = PHASES_DATA[activePhase];
 
   return (
     <div className="w-full">
-      {/* Day Selector Tabs */}
+      {/* Weeks Selector Tabs */}
       <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-8">
-        {DAYS_DATA.map((d) => {
-          const isActive = d.day === selectedDay;
+        {PHASES_DATA.map((p, idx) => {
+          const isActive = idx === activePhase;
           return (
             <button
-              key={d.day}
-              onClick={() => setSelectedDay(d.day)}
+              key={idx}
+              onClick={() => setActivePhase(idx)}
               className={`relative overflow-hidden rounded-xl py-4 px-3 sm:px-6 transition-all duration-300 text-center border cursor-pointer ${
                 isActive
                   ? "bg-deep-steel border-cyber-lime text-cyber-lime shadow-[0_0_20px_rgba(204,255,0,0.15)]"
@@ -144,13 +148,10 @@ export default function TimelineWalkthrough() {
                 <div className="absolute top-0 left-0 right-0 h-[2px] bg-cyber-lime shadow-[0_0_8px_#ccff00]" />
               )}
               <span className="block text-xs font-mono tracking-widest text-slate-500 uppercase">
-                Stage 0{d.day}
+                Phase 0{idx + 1}
               </span>
               <span className="block font-bold text-sm sm:text-base mt-1">
-                Day {d.day}
-              </span>
-              <span className="block text-xxs sm:text-xs text-slate-400 mt-0.5 truncate hidden sm:block">
-                {d.phase}
+                {p.weeks}
               </span>
             </button>
           );
@@ -162,35 +163,45 @@ export default function TimelineWalkthrough() {
         {/* Glow Element */}
         <div className="absolute -top-24 -right-24 w-48 h-48 rounded-full bg-cyber-lime/5 blur-3xl" />
         
-        {/* Day Header */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-white/10">
+        {/* Phase Header */}
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-white/10">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyber-lime/10 text-cyber-lime text-xs font-mono font-semibold border border-cyber-lime/20 mb-2">
               <span className="w-1.5 h-1.5 rounded-full bg-cyber-lime animate-ping" />
-              Day {currentDayData.day}: {currentDayData.phase}
+              {currentPhase.weeks}: {currentPhase.title}
             </div>
             <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-              {currentDayData.phase}
+              {currentPhase.title}
             </h3>
-            <p className="text-sm text-soft-gray mt-2 max-w-xl">
-              {currentDayData.summary}
+            <p className="text-sm text-soft-gray mt-2 max-w-xl leading-relaxed">
+              {currentPhase.sub}
             </p>
           </div>
           
-          {/* Sensory Checklist Box */}
-          <div className="bg-cyber-dark/80 rounded-xl p-4 border border-white/5 md:max-w-xs w-full">
-            <span className="block text-xs font-mono font-bold text-electric-blue uppercase tracking-wider mb-1.5">
-              Sensory Environment
-            </span>
-            <p className="text-xs text-slate-300 leading-relaxed">
-              {currentDayData.sensoryNote}
-            </p>
+          {/* Social & Sensory Box */}
+          <div className="flex flex-col gap-3 w-full lg:max-w-xs shrink-0">
+            <div className="bg-cyber-dark/80 rounded-xl p-3 border border-white/5">
+              <span className="block text-xxs font-mono font-bold text-electric-blue uppercase tracking-wider mb-1">
+                Sensory Environment
+              </span>
+              <p className="text-xs text-slate-300 leading-normal">
+                {currentPhase.sensoryNote}
+              </p>
+            </div>
+            <div className="bg-cyber-dark/80 rounded-xl p-3 border border-white/5">
+              <span className="block text-xxs font-mono font-bold text-cyan-400 uppercase tracking-wider mb-1">
+                Friendship Alignment
+              </span>
+              <p className="text-xs text-slate-300 leading-normal">
+                {currentPhase.socialGoal}
+              </p>
+            </div>
           </div>
         </div>
 
         {/* Schedule Timeline */}
         <div className="mt-8 space-y-6 relative before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-[2px] before:bg-white/5">
-          {currentDayData.schedule.map((item, idx) => (
+          {currentPhase.schedule.map((item, idx) => (
             <div key={idx} className="flex gap-4 sm:gap-6 items-start relative group">
               {/* Timeline Dot */}
               <div className="relative z-10 flex items-center justify-center w-6 h-6 rounded-full bg-cyber-dark border-2 border-white/10 group-hover:border-cyber-lime transition-colors duration-300 mt-1">
@@ -202,7 +213,7 @@ export default function TimelineWalkthrough() {
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
                   <div className="flex items-baseline gap-2">
                     <span className="text-xs font-mono text-cyber-lime font-bold">
-                      {item.time}
+                      {item.duration}
                     </span>
                     <h4 className="text-sm sm:text-base font-semibold text-white">
                       {item.title}
@@ -230,10 +241,10 @@ export default function TimelineWalkthrough() {
             </div>
             <div>
               <span className="block text-xxs font-mono text-slate-500 uppercase tracking-widest">
-                Daily Achievement Goal
+                Phase Milestone Goal
               </span>
               <span className="block text-sm font-semibold text-white">
-                {currentDayData.milestone}
+                {currentPhase.milestone}
               </span>
             </div>
           </div>
@@ -244,7 +255,7 @@ export default function TimelineWalkthrough() {
             }}
             className="w-full sm:w-auto px-5 py-2.5 rounded-lg bg-cyber-lime text-black font-semibold text-sm hover:bg-white hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer text-center"
           >
-            Claim Your Spot
+            Join the League
           </button>
         </div>
       </div>

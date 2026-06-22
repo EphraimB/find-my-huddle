@@ -3,6 +3,7 @@
 import TimelineWalkthrough from "@/components/TimelineWalkthrough";
 import ComfortAdaptor from "@/components/ComfortAdaptor";
 import PlaybookDrawBoard from "@/components/PlaybookDrawBoard";
+import DoomscrollReplacement from "@/components/DoomscrollReplacement";
 import EnrollmentForm from "@/components/EnrollmentForm";
 
 export default function Home() {
@@ -27,7 +28,7 @@ export default function Home() {
               H
             </div>
             <div>
-              <span className="font-mono text-xs text-slate-500 block leading-none">PROJECT</span>
+              <span className="font-mono text-xs text-slate-500 block leading-none">WEEKLY LEAGUE</span>
               <span className="font-extrabold text-sm sm:text-base tracking-wider text-white">FIND MY HUDDLE</span>
             </div>
           </div>
@@ -37,7 +38,13 @@ export default function Home() {
               onClick={() => scrollToSection("timeline-section")}
               className="text-xs font-mono font-bold tracking-wider text-slate-400 hover:text-cyber-lime transition cursor-pointer"
             >
-              VISUAL SCHEDULE
+              12-WEEK ROADMAP
+            </button>
+            <button 
+              onClick={() => scrollToSection("homework-section")}
+              className="text-xs font-mono font-bold tracking-wider text-slate-400 hover:text-cyber-lime transition cursor-pointer"
+            >
+              DOOMSCROLL SWAP
             </button>
             <button 
               onClick={() => scrollToSection("comfort-section")}
@@ -49,7 +56,7 @@ export default function Home() {
               onClick={() => scrollToSection("playbook-section")}
               className="text-xs font-mono font-bold tracking-wider text-slate-400 hover:text-cyber-lime transition cursor-pointer"
             >
-              INTERACTIVE PLAYBOOK
+              PLAYBOOK BOARD
             </button>
           </div>
 
@@ -68,16 +75,16 @@ export default function Home() {
         {/* Glow Tag */}
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/50 text-cyan-400 text-xs font-mono border border-cyan-800/40 mb-6 tracking-wide animate-pulse">
           <span className="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_8px_#22d3ee]" />
-          NEURODIVERGENT-FRIENDLY SPACE
+          12-WEEK neurodivergent-friendly LEAGUE
         </div>
 
         <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-white max-w-4xl leading-tight">
-          A Structured, <span className="text-cyber-lime glow-text-lime">Sensory-Friendly</span> <br className="hidden sm:inline" />
-          Football Experience
+          A Structured, <span className="text-cyber-lime glow-text-lime">Weekly League</span> <br />
+          Built for Real Friendship
         </h1>
 
         <p className="mt-6 text-base sm:text-lg text-soft-gray max-w-2xl leading-relaxed">
-          Find your huddle. Play flag football in a highly predictable, supportive environment designed specifically for autistic young adults to play, connect, and thrive at their own pace.
+          Friendship takes time to build. Our 12-week flag football clinic and weekly league matches provide consistency—same teammates, same field, same coaches—with low-pressure at-home homework to keep you active.
         </p>
 
         <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center w-full max-w-xs sm:max-w-md">
@@ -85,62 +92,77 @@ export default function Home() {
             onClick={() => scrollToSection("timeline-section")}
             className="px-6 py-3 rounded-lg bg-cyber-lime hover:bg-white text-black font-bold text-sm tracking-wider uppercase transition-all duration-300 cursor-pointer text-center"
           >
-            See What to Expect
+            Explore the 12 Weeks
           </button>
           <button
-            onClick={() => scrollToSection("playbook-section")}
+            onClick={() => scrollToSection("homework-section")}
             className="px-6 py-3 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold text-sm tracking-wider uppercase transition-all duration-300 cursor-pointer text-center"
           >
-            Try the Playbook
+            Try at-home Quests
           </button>
         </div>
 
         {/* Sensory Highlights Banner */}
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 w-full border-t border-b border-white/5 py-8 bg-white/[0.01]">
           <div className="p-3 text-center">
-            <span className="block text-xl sm:text-2xl font-bold text-cyber-lime">NO Whistles</span>
-            <span className="block text-xxs sm:text-xs text-slate-400 uppercase tracking-widest mt-1 font-mono">Soft Buzzers Only</span>
+            <span className="block text-xl sm:text-2xl font-bold text-cyber-lime">12 Weeks Play</span>
+            <span className="block text-xxs sm:text-xs text-slate-400 uppercase tracking-widest mt-1 font-mono">Consistency & Trust</span>
           </div>
           <div className="p-3 text-center">
-            <span className="block text-xl sm:text-2xl font-bold text-cyber-lime">PECS Friendly</span>
-            <span className="block text-xxs sm:text-xs text-slate-400 uppercase tracking-widest mt-1 font-mono">Visual Play Cards</span>
+            <span className="block text-xl sm:text-2xl font-bold text-cyber-lime">At-Home Homework</span>
+            <span className="block text-xxs sm:text-xs text-slate-400 uppercase tracking-widest mt-1 font-mono">No Doomscrolling</span>
           </div>
           <div className="p-3 text-center">
-            <span className="block text-xl sm:text-2xl font-bold text-cyber-lime">Quiet Tents</span>
-            <span className="block text-xxs sm:text-xs text-slate-400 uppercase tracking-widest mt-1 font-mono">Sensory Break Zones</span>
+            <span className="block text-xl sm:text-2xl font-bold text-cyber-lime">Visual Cards</span>
+            <span className="block text-xxs sm:text-xs text-slate-400 uppercase tracking-widest mt-1 font-mono">Rule-Based Coordination</span>
           </div>
           <div className="p-3 text-center">
-            <span className="block text-xl sm:text-2xl font-bold text-cyber-lime">Pre-Introduced</span>
-            <span className="block text-xxs sm:text-xs text-slate-400 uppercase tracking-widest mt-1 font-mono">Meet Coaches Prior</span>
+            <span className="block text-xl sm:text-2xl font-bold text-cyber-lime">Private Intro</span>
+            <span className="block text-xxs sm:text-xs text-slate-400 uppercase tracking-widest mt-1 font-mono">Meet Coach Personally</span>
           </div>
         </div>
 
       </section>
 
-      {/* Predictability Section - Timeline */}
+      {/* Predictability Section - 12-Week Roadmap */}
       <section id="timeline-section" className="py-16 border-t border-white/5 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="max-w-3xl mx-auto text-center mb-12">
-          <span className="text-xs font-mono text-cyan-400 uppercase tracking-widest font-bold">Predictability First</span>
+          <span className="text-xs font-mono text-cyan-400 uppercase tracking-widest font-bold">Predictable Growth</span>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-white mt-2">
-            No Surprises. Exact Schedules.
+            The 12-Week Progression Roadmap
           </h2>
           <p className="text-xs sm:text-sm text-soft-gray mt-3 leading-relaxed">
-            Social situations are easier to navigate when you know exactly what is coming. Here is the detailed visual map of our 3-day flag football progression clinic.
+            Team bonding is a gradual process. Our monthly phases ease you from individual mechanics to 1-on-1 partner pairing, concluding in cooperative 3-on-3 league scrimmages.
           </p>
         </div>
 
         <TimelineWalkthrough />
       </section>
 
+      {/* Homework Section (Doomscroll Swap) */}
+      <section id="homework-section" className="py-16 border-t border-white/5 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full bg-white/[0.005]">
+        <div className="max-w-3xl mx-auto text-center mb-12">
+          <span className="text-xs font-mono text-cyan-400 uppercase tracking-widest font-bold">At-Home Preparation</span>
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-white mt-2">
+            Doomscroll Alternatives
+          </h2>
+          <p className="text-xs sm:text-sm text-soft-gray mt-3 leading-relaxed">
+            Trade passive scrolling loops for quick, low-pressure huddle homework. Complete physical reaction grabs, playbook designs, or quiet bedroom fitness tasks.
+          </p>
+        </div>
+
+        <DoomscrollReplacement />
+      </section>
+
       {/* Comfort Adaptor Section */}
-      <section id="comfort-section" className="py-16 border-t border-white/5 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full bg-white/[0.005]">
+      <section id="comfort-section" className="py-16 border-t border-white/5 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <span className="text-xs font-mono text-cyan-400 uppercase tracking-widest font-bold">Social Battery Customization</span>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-white mt-2">
             The Communication Adaptor
           </h2>
           <p className="text-xs sm:text-sm text-soft-gray mt-3 leading-relaxed">
-            Whether you are feeling high social energy, prefer visual cards with no speech demands, or want quiet partner practice, we adapt the game to match your preference.
+            Coaches and teammates customize weekly sessions according to your daily social battery. Snapping between quiet visual cards and small huddle planning ensures you play without strain.
           </p>
         </div>
 
@@ -148,14 +170,14 @@ export default function Home() {
       </section>
 
       {/* Playbook Section */}
-      <section id="playbook-section" className="py-16 border-t border-white/5 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <section id="playbook-section" className="py-16 border-t border-white/5 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full bg-white/[0.005]">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <span className="text-xs font-mono text-cyan-400 uppercase tracking-widest font-bold">Rule-Based Coordination</span>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-white mt-2">
-            Zero Social Guesswork
+            Playbook Design Task
           </h2>
           <p className="text-xs sm:text-sm text-soft-gray mt-3 leading-relaxed">
-            Football is a system of lines and timing. By drawing receiver route paths, you decide exactly how teammates collaborate. Draw a route on the canvas and run the simulation.
+            Draw exact patterns for your receivers to study at home. Because every player operates under rules and coordinates on paths, on-field play is logical, repeatable, and completely structured.
           </p>
         </div>
 
@@ -163,14 +185,14 @@ export default function Home() {
       </section>
 
       {/* Sensory Guarantee Details */}
-      <section className="py-16 border-t border-white/5 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full bg-white/[0.005]">
+      <section className="py-16 border-t border-white/5 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <span className="text-xs font-mono text-cyan-400 uppercase tracking-widest font-bold">Accommodating Environment</span>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-white mt-2">
             Sensory Safety Guarantees
           </h2>
           <p className="text-xs sm:text-sm text-soft-gray mt-3 leading-relaxed">
-            Standard sports programs can be overwhelming. We’ve redesigned the flag football clinic to prioritize sensory safety and emotional comfort.
+            Traditional athletic leagues can be overwhelming. We’ve rebuilt the flag football experience from the ground up to accommodate sensory profiles.
           </p>
         </div>
 
@@ -181,9 +203,9 @@ export default function Home() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
               </svg>
             </div>
-            <h4 className="text-sm font-bold text-white mb-2">Whistle-Free Fields</h4>
+            <h4 className="text-sm font-bold text-white mb-2">Electronic Soft-Buzzers</h4>
             <p className="text-xs text-soft-gray leading-relaxed">
-              Whistles can trigger sensory overload. Coaches use visual flags, hand gestures, and electronic soft-buzzers. Ear protection is fully welcome during play.
+              Traditional high-pitch metal whistles are banned. Coaches use silent visual flags and low-frequency handheld electronic buzzers.
             </p>
           </div>
 
@@ -193,9 +215,9 @@ export default function Home() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75-9.75-4.365-9.75-9.75ZM9 10.5a.75.75 0 0 1 .75-.75h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1-.75-.75Z" />
               </svg>
             </div>
-            <h4 className="text-sm font-bold text-white mb-2">Decompression Break Zones</h4>
+            <h4 className="text-sm font-bold text-white mb-2">Dedicated Quiet Tents</h4>
             <p className="text-xs text-soft-gray leading-relaxed">
-              If social demands or physical efforts feel too heavy, you can step off to our quiet tents. High comfort seats, cooling fans, and water are always accessible.
+              If sensory volume or physical effort feels too high, you can step off to our quiet tents. Soft lighting, cooling fans, and quiet seats are open at all times.
             </p>
           </div>
 
@@ -205,23 +227,23 @@ export default function Home() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
               </svg>
             </div>
-            <h4 className="text-sm font-bold text-white mb-2">Private Coach Introductions</h4>
+            <h4 className="text-sm font-bold text-white mb-2">Familiar Huddle Cohorts</h4>
             <p className="text-xs text-soft-gray leading-relaxed">
-              Avoid arriving to a field of strangers. Request a private email introduction, allowing you to ask questions and establish a trusted contact before Day 1.
+              You play with the same small group (3-4 players) for the duration of the league. Building trust takes time, and consistency reduces routine changes.
             </p>
           </div>
         </div>
       </section>
 
       {/* Success Stories / Testimonials */}
-      <section className="py-16 border-t border-white/5 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <section className="py-16 border-t border-white/5 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full bg-white/[0.005]">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <span className="text-xs font-mono text-cyan-400 uppercase tracking-widest font-bold">Real Stories</span>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-white mt-2">
             Teammates Who Found Their Huddle
           </h2>
           <p className="text-xs sm:text-sm text-soft-gray mt-3 leading-relaxed">
-            Read how other autistic young adults transitioned from solo sports observers to active, connected flag football players.
+            Read how other autistic young adults transitioned from screen isolation to finding active, weekly athletic connections.
           </p>
         </div>
 
@@ -233,11 +255,11 @@ export default function Home() {
               </svg>
             </div>
             <p className="text-sm text-slate-300 leading-relaxed italic mb-6">
-              &ldquo;Traditional team sports always terrified me because of the sensory overload and the anxiety of picking teams. At Huddle, my route was drawn on a card, my partner was pre-assigned, and I wore a visual communication band. I made friends who actually understood me.&rdquo;
+              &ldquo;I spent 8 hours a day scrolling social media. The at-home homework gave me small, visual tasks to do instead—like Tennis Ball Drops. Over 12 weeks, playing with the same buddy made me comfortable enough to join huddle plays on-field. I'm actually excited for Saturdays now.&rdquo;
             </p>
             <div>
               <span className="block font-bold text-white text-sm">Marcus K.</span>
-              <span className="block text-xxs font-mono text-slate-500 mt-0.5">AGE 21 &bull; WR / TACTICIAN</span>
+              <span className="block text-xxs font-mono text-slate-500 mt-0.5">MEMBER SINCE 2025 &bull; WEEKLY LEAGUE</span>
             </div>
           </div>
 
@@ -248,11 +270,11 @@ export default function Home() {
               </svg>
             </div>
             <p className="text-sm text-slate-300 leading-relaxed italic mb-6">
-              &ldquo;The minute-by-minute schedule made all the difference. I knew exactly where to stand at 09:30, and the coaches never screamed. It was incredible how simple route-running could build coordination without requiring heavy social conversations.&rdquo;
+              &ldquo;The weekly routine consistency is what worked. Knowing I'd see the same coach and run the playbook with the same huddle partner made social dynamics predictable. Practicing the footwork patterns at home prepared me without the anxiety of a traditional gym environment.&rdquo;
             </p>
             <div>
               <span className="block font-bold text-white text-sm">Liam D.</span>
-              <span className="block text-xxs font-mono text-slate-500 mt-0.5">AGE 24 &bull; PARTNER PLAY SYNC</span>
+              <span className="block text-xxs font-mono text-slate-500 mt-0.5">MEMBER SINCE 2025 &bull; WEEKLY LEAGUE</span>
             </div>
           </div>
         </div>
@@ -269,15 +291,15 @@ export default function Home() {
           <div>
             <span className="font-extrabold text-sm tracking-wider text-white">FIND MY HUDDLE</span>
             <p className="text-xxs text-slate-500 mt-1">
-              &copy; {new Date().getFullYear()} Find My Huddle. All rights reserved. Designed for predictability and inclusion.
+              &copy; {new Date().getFullYear()} Find My Huddle. All rights reserved. Designed for weekly progress and neuro-inclusion.
             </p>
           </div>
           <div className="flex gap-4 text-xxs font-mono text-slate-400">
             <span className="hover:text-cyber-lime cursor-pointer">Sensory Policy</span>
             <span>&bull;</span>
-            <span className="hover:text-cyber-lime cursor-pointer">Visual Maps</span>
+            <span className="hover:text-cyber-lime cursor-pointer">Weekly Quests</span>
             <span>&bull;</span>
-            <span className="hover:text-cyber-lime cursor-pointer">Support Help</span>
+            <span className="hover:text-cyber-lime cursor-pointer">League Support</span>
           </div>
         </div>
       </footer>
