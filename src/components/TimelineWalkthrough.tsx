@@ -76,7 +76,7 @@ const PHASES_DATA: PhaseData[] = [
       },
       {
         duration: "20 Mins",
-        title: "Playbook白板 Coordination",
+        title: "Playbook Whiteboard Coordination",
         desc: "Co-design a 2-person route combination using chalkboard folders. Walk through the physical routes together to test the pattern.",
         focus: "Collaboration",
       },
