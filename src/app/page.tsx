@@ -1,0 +1,287 @@
+"use client";
+
+import TimelineWalkthrough from "@/components/TimelineWalkthrough";
+import ComfortAdaptor from "@/components/ComfortAdaptor";
+import PlaybookDrawBoard from "@/components/PlaybookDrawBoard";
+import EnrollmentForm from "@/components/EnrollmentForm";
+
+export default function Home() {
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
+  return (
+    <div className="flex-1 bg-cyber-dark text-slate-100 flex flex-col font-sans relative selection:bg-cyber-lime selection:text-black">
+      
+      {/* Background Glow Effects */}
+      <div className="absolute top-0 left-1/4 w-[400px] h-[400px] rounded-full bg-cyan-500/5 blur-3xl pointer-events-none" />
+      <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] rounded-full bg-cyber-lime/5 blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 left-10 w-[350px] h-[350px] rounded-full bg-electric-blue/5 blur-3xl pointer-events-none" />
+
+      {/* Header / Navigation */}
+      <header className="sticky top-0 z-50 glass-panel border-b border-white/5">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+          <div className="flex items-center gap-2.5">
+            <div className="w-8 h-8 rounded-lg bg-cyber-lime flex items-center justify-center text-black font-extrabold text-sm shadow-[0_0_12px_rgba(204,255,0,0.3)]">
+              H
+            </div>
+            <div>
+              <span className="font-mono text-xs text-slate-500 block leading-none">PROJECT</span>
+              <span className="font-extrabold text-sm sm:text-base tracking-wider text-white">FIND MY HUDDLE</span>
+            </div>
+          </div>
+
+          <div className="hidden md:flex items-center gap-6">
+            <button 
+              onClick={() => scrollToSection("timeline-section")}
+              className="text-xs font-mono font-bold tracking-wider text-slate-400 hover:text-cyber-lime transition cursor-pointer"
+            >
+              VISUAL SCHEDULE
+            </button>
+            <button 
+              onClick={() => scrollToSection("comfort-section")}
+              className="text-xs font-mono font-bold tracking-wider text-slate-400 hover:text-cyber-lime transition cursor-pointer"
+            >
+              COMFORT ADAPTOR
+            </button>
+            <button 
+              onClick={() => scrollToSection("playbook-section")}
+              className="text-xs font-mono font-bold tracking-wider text-slate-400 hover:text-cyber-lime transition cursor-pointer"
+            >
+              INTERACTIVE PLAYBOOK
+            </button>
+          </div>
+
+          <button
+            onClick={() => scrollToSection("enrollment-section")}
+            className="px-4 py-2 rounded-lg bg-cyber-lime text-black font-bold text-xs tracking-wider uppercase hover:bg-white hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer shadow-[0_0_15px_rgba(204,255,0,0.15)]"
+          >
+            Enroll Free
+          </button>
+        </div>
+      </header>
+
+      {/* Hero Section */}
+      <section className="relative py-16 sm:py-24 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
+        
+        {/* Glow Tag */}
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/50 text-cyan-400 text-xs font-mono border border-cyan-800/40 mb-6 tracking-wide animate-pulse">
+          <span className="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_8px_#22d3ee]" />
+          NEURODIVERGENT-FRIENDLY SPACE
+        </div>
+
+        <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-white max-w-4xl leading-tight">
+          A Structured, <span className="text-cyber-lime glow-text-lime">Sensory-Friendly</span> <br className="hidden sm:inline" />
+          Football Experience
+        </h1>
+
+        <p className="mt-6 text-base sm:text-lg text-soft-gray max-w-2xl leading-relaxed">
+          Find your huddle. Play flag football in a highly predictable, supportive environment designed specifically for autistic young adults to play, connect, and thrive at their own pace.
+        </p>
+
+        <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center w-full max-w-xs sm:max-w-md">
+          <button
+            onClick={() => scrollToSection("timeline-section")}
+            className="px-6 py-3 rounded-lg bg-cyber-lime hover:bg-white text-black font-bold text-sm tracking-wider uppercase transition-all duration-300 cursor-pointer text-center"
+          >
+            See What to Expect
+          </button>
+          <button
+            onClick={() => scrollToSection("playbook-section")}
+            className="px-6 py-3 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold text-sm tracking-wider uppercase transition-all duration-300 cursor-pointer text-center"
+          >
+            Try the Playbook
+          </button>
+        </div>
+
+        {/* Sensory Highlights Banner */}
+        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 w-full border-t border-b border-white/5 py-8 bg-white/[0.01]">
+          <div className="p-3 text-center">
+            <span className="block text-xl sm:text-2xl font-bold text-cyber-lime">NO Whistles</span>
+            <span className="block text-xxs sm:text-xs text-slate-400 uppercase tracking-widest mt-1 font-mono">Soft Buzzers Only</span>
+          </div>
+          <div className="p-3 text-center">
+            <span className="block text-xl sm:text-2xl font-bold text-cyber-lime">PECS Friendly</span>
+            <span className="block text-xxs sm:text-xs text-slate-400 uppercase tracking-widest mt-1 font-mono">Visual Play Cards</span>
+          </div>
+          <div className="p-3 text-center">
+            <span className="block text-xl sm:text-2xl font-bold text-cyber-lime">Quiet Tents</span>
+            <span className="block text-xxs sm:text-xs text-slate-400 uppercase tracking-widest mt-1 font-mono">Sensory Break Zones</span>
+          </div>
+          <div className="p-3 text-center">
+            <span className="block text-xl sm:text-2xl font-bold text-cyber-lime">Pre-Introduced</span>
+            <span className="block text-xxs sm:text-xs text-slate-400 uppercase tracking-widest mt-1 font-mono">Meet Coaches Prior</span>
+          </div>
+        </div>
+
+      </section>
+
+      {/* Predictability Section - Timeline */}
+      <section id="timeline-section" className="py-16 border-t border-white/5 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="max-w-3xl mx-auto text-center mb-12">
+          <span className="text-xs font-mono text-cyan-400 uppercase tracking-widest font-bold">Predictability First</span>
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-white mt-2">
+            No Surprises. Exact Schedules.
+          </h2>
+          <p className="text-xs sm:text-sm text-soft-gray mt-3 leading-relaxed">
+            Social situations are easier to navigate when you know exactly what is coming. Here is the detailed visual map of our 3-day flag football progression clinic.
+          </p>
+        </div>
+
+        <TimelineWalkthrough />
+      </section>
+
+      {/* Comfort Adaptor Section */}
+      <section id="comfort-section" className="py-16 border-t border-white/5 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full bg-white/[0.005]">
+        <div className="max-w-3xl mx-auto text-center mb-12">
+          <span className="text-xs font-mono text-cyan-400 uppercase tracking-widest font-bold">Social Battery Customization</span>
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-white mt-2">
+            The Communication Adaptor
+          </h2>
+          <p className="text-xs sm:text-sm text-soft-gray mt-3 leading-relaxed">
+            Whether you are feeling high social energy, prefer visual cards with no speech demands, or want quiet partner practice, we adapt the game to match your preference.
+          </p>
+        </div>
+
+        <ComfortAdaptor />
+      </section>
+
+      {/* Playbook Section */}
+      <section id="playbook-section" className="py-16 border-t border-white/5 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="max-w-3xl mx-auto text-center mb-12">
+          <span className="text-xs font-mono text-cyan-400 uppercase tracking-widest font-bold">Rule-Based Coordination</span>
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-white mt-2">
+            Zero Social Guesswork
+          </h2>
+          <p className="text-xs sm:text-sm text-soft-gray mt-3 leading-relaxed">
+            Football is a system of lines and timing. By drawing receiver route paths, you decide exactly how teammates collaborate. Draw a route on the canvas and run the simulation.
+          </p>
+        </div>
+
+        <PlaybookDrawBoard />
+      </section>
+
+      {/* Sensory Guarantee Details */}
+      <section className="py-16 border-t border-white/5 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full bg-white/[0.005]">
+        <div className="max-w-3xl mx-auto text-center mb-12">
+          <span className="text-xs font-mono text-cyan-400 uppercase tracking-widest font-bold">Accommodating Environment</span>
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-white mt-2">
+            Sensory Safety Guarantees
+          </h2>
+          <p className="text-xs sm:text-sm text-soft-gray mt-3 leading-relaxed">
+            Standard sports programs can be overwhelming. We’ve redesigned the flag football clinic to prioritize sensory safety and emotional comfort.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="glass-panel p-6 rounded-2xl border border-white/5">
+            <div className="w-10 h-10 rounded-lg bg-cyber-lime/10 border border-cyber-lime/20 flex items-center justify-center text-cyber-lime mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
+              </svg>
+            </div>
+            <h4 className="text-sm font-bold text-white mb-2">Whistle-Free Fields</h4>
+            <p className="text-xs text-soft-gray leading-relaxed">
+              Whistles can trigger sensory overload. Coaches use visual flags, hand gestures, and electronic soft-buzzers. Ear protection is fully welcome during play.
+            </p>
+          </div>
+
+          <div className="glass-panel p-6 rounded-2xl border border-white/5">
+            <div className="w-10 h-10 rounded-lg bg-cyber-lime/10 border border-cyber-lime/20 flex items-center justify-center text-cyber-lime mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75-9.75-4.365-9.75-9.75ZM9 10.5a.75.75 0 0 1 .75-.75h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1-.75-.75Z" />
+              </svg>
+            </div>
+            <h4 className="text-sm font-bold text-white mb-2">Decompression Break Zones</h4>
+            <p className="text-xs text-soft-gray leading-relaxed">
+              If social demands or physical efforts feel too heavy, you can step off to our quiet tents. High comfort seats, cooling fans, and water are always accessible.
+            </p>
+          </div>
+
+          <div className="glass-panel p-6 rounded-2xl border border-white/5">
+            <div className="w-10 h-10 rounded-lg bg-cyber-lime/10 border border-cyber-lime/20 flex items-center justify-center text-cyber-lime mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+              </svg>
+            </div>
+            <h4 className="text-sm font-bold text-white mb-2">Private Coach Introductions</h4>
+            <p className="text-xs text-soft-gray leading-relaxed">
+              Avoid arriving to a field of strangers. Request a private email introduction, allowing you to ask questions and establish a trusted contact before Day 1.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Success Stories / Testimonials */}
+      <section className="py-16 border-t border-white/5 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="max-w-3xl mx-auto text-center mb-12">
+          <span className="text-xs font-mono text-cyan-400 uppercase tracking-widest font-bold">Real Stories</span>
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-white mt-2">
+            Teammates Who Found Their Huddle
+          </h2>
+          <p className="text-xs sm:text-sm text-soft-gray mt-3 leading-relaxed">
+            Read how other autistic young adults transitioned from solo sports observers to active, connected flag football players.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="glass-panel p-6 sm:p-8 rounded-2xl border border-white/5 relative">
+            <div className="absolute top-6 right-6 text-cyber-lime opacity-10">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" className="w-12 h-12">
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+              </svg>
+            </div>
+            <p className="text-sm text-slate-300 leading-relaxed italic mb-6">
+              &ldquo;Traditional team sports always terrified me because of the sensory overload and the anxiety of picking teams. At Huddle, my route was drawn on a card, my partner was pre-assigned, and I wore a visual communication band. I made friends who actually understood me.&rdquo;
+            </p>
+            <div>
+              <span className="block font-bold text-white text-sm">Marcus K.</span>
+              <span className="block text-xxs font-mono text-slate-500 mt-0.5">AGE 21 &bull; WR / TACTICIAN</span>
+            </div>
+          </div>
+
+          <div className="glass-panel p-6 sm:p-8 rounded-2xl border border-white/5 relative">
+            <div className="absolute top-6 right-6 text-cyber-lime opacity-10">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" className="w-12 h-12">
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+              </svg>
+            </div>
+            <p className="text-sm text-slate-300 leading-relaxed italic mb-6">
+              &ldquo;The minute-by-minute schedule made all the difference. I knew exactly where to stand at 09:30, and the coaches never screamed. It was incredible how simple route-running could build coordination without requiring heavy social conversations.&rdquo;
+            </p>
+            <div>
+              <span className="block font-bold text-white text-sm">Liam D.</span>
+              <span className="block text-xxs font-mono text-slate-500 mt-0.5">AGE 24 &bull; PARTNER PLAY SYNC</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Enrollment Section */}
+      <section id="enrollment-section" className="py-16 border-t border-white/5 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full mb-12">
+        <EnrollmentForm />
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-white/5 bg-cyber-dark/80 py-8 mt-auto">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+          <div>
+            <span className="font-extrabold text-sm tracking-wider text-white">FIND MY HUDDLE</span>
+            <p className="text-xxs text-slate-500 mt-1">
+              &copy; {new Date().getFullYear()} Find My Huddle. All rights reserved. Designed for predictability and inclusion.
+            </p>
+          </div>
+          <div className="flex gap-4 text-xxs font-mono text-slate-400">
+            <span className="hover:text-cyber-lime cursor-pointer">Sensory Policy</span>
+            <span>&bull;</span>
+            <span className="hover:text-cyber-lime cursor-pointer">Visual Maps</span>
+            <span>&bull;</span>
+            <span className="hover:text-cyber-lime cursor-pointer">Support Help</span>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  );
+}
