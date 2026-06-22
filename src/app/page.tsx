@@ -4,6 +4,7 @@ import TimelineWalkthrough from "@/components/TimelineWalkthrough";
 import ComfortAdaptor from "@/components/ComfortAdaptor";
 import PlaybookDrawBoard from "@/components/PlaybookDrawBoard";
 import DoomscrollReplacement from "@/components/DoomscrollReplacement";
+import ClubSocialCalendar from "@/components/ClubSocialCalendar";
 import EnrollmentForm from "@/components/EnrollmentForm";
 
 export default function Home() {
@@ -28,17 +29,23 @@ export default function Home() {
               H
             </div>
             <div>
-              <span className="font-mono text-xs text-slate-500 block leading-none">WEEKLY LEAGUE</span>
+              <span className="font-mono text-xs text-slate-500 block leading-none">SPORTS CLUB</span>
               <span className="font-extrabold text-sm sm:text-base tracking-wider text-white">FIND MY HUDDLE</span>
             </div>
           </div>
 
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden lg:flex items-center gap-6">
             <button 
               onClick={() => scrollToSection("timeline-section")}
               className="text-xs font-mono font-bold tracking-wider text-slate-400 hover:text-cyber-lime transition cursor-pointer"
             >
-              12-WEEK ROADMAP
+              ROADMAP
+            </button>
+            <button 
+              onClick={() => scrollToSection("clubhouse-section")}
+              className="text-xs font-mono font-bold tracking-wider text-slate-400 hover:text-cyber-lime transition cursor-pointer"
+            >
+              CLUBHOUSE CALENDAR
             </button>
             <button 
               onClick={() => scrollToSection("homework-section")}
@@ -64,7 +71,7 @@ export default function Home() {
             onClick={() => scrollToSection("enrollment-section")}
             className="px-4 py-2 rounded-lg bg-cyber-lime text-black font-bold text-xs tracking-wider uppercase hover:bg-white hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer shadow-[0_0_15px_rgba(204,255,0,0.15)]"
           >
-            Enroll Free
+            Join Huddle Club
           </button>
         </div>
       </header>
@@ -75,64 +82,79 @@ export default function Home() {
         {/* Glow Tag */}
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/50 text-cyan-400 text-xs font-mono border border-cyan-800/40 mb-6 tracking-wide animate-pulse">
           <span className="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_8px_#22d3ee]" />
-          12-WEEK neurodivergent-friendly LEAGUE
+          A SUPPORTIVE COMMUNITY & SPORTS CLUB
         </div>
 
         <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-white max-w-4xl leading-tight">
-          A Structured, <span className="text-cyber-lime glow-text-lime">Weekly League</span> <br />
-          Built for Real Friendship
+          A Structured, <span className="text-cyber-lime glow-text-lime">Weekly Sports Club</span> <br />
+          For True Teammate Connection
         </h1>
 
         <p className="mt-6 text-base sm:text-lg text-soft-gray max-w-2xl leading-relaxed">
-          Friendship takes time to build. Our 12-week flag football clinic and weekly league matches provide consistency—same teammates, same field, same coaches—with low-pressure at-home homework to keep you active.
+          More than just an athletic clinic. Find My Huddle is a neurodivergent social outlet combining low-stakes weekly flag football matches with online gaming lobbies, strategy board games, and quiet tailgates.
         </p>
 
         <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center w-full max-w-xs sm:max-w-md">
           <button
-            onClick={() => scrollToSection("timeline-section")}
+            onClick={() => scrollToSection("clubhouse-section")}
             className="px-6 py-3 rounded-lg bg-cyber-lime hover:bg-white text-black font-bold text-sm tracking-wider uppercase transition-all duration-300 cursor-pointer text-center"
           >
-            Explore the 12 Weeks
+            View Weekly Socials
           </button>
           <button
-            onClick={() => scrollToSection("homework-section")}
+            onClick={() => scrollToSection("timeline-section")}
             className="px-6 py-3 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold text-sm tracking-wider uppercase transition-all duration-300 cursor-pointer text-center"
           >
-            Try at-home Quests
+            Our 12-Week Roadmap
           </button>
         </div>
 
         {/* Sensory Highlights Banner */}
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 w-full border-t border-b border-white/5 py-8 bg-white/[0.01]">
           <div className="p-3 text-center">
-            <span className="block text-xl sm:text-2xl font-bold text-cyber-lime">12 Weeks Play</span>
-            <span className="block text-xxs sm:text-xs text-slate-400 uppercase tracking-widest mt-1 font-mono">Consistency & Trust</span>
+            <span className="block text-xl sm:text-2xl font-bold text-cyber-lime">Weekly Socials</span>
+            <span className="block text-xxs sm:text-xs text-slate-400 uppercase tracking-widest mt-1 font-mono">Gaming & Tabletop Nights</span>
           </div>
           <div className="p-3 text-center">
-            <span className="block text-xl sm:text-2xl font-bold text-cyber-lime">At-Home Homework</span>
-            <span className="block text-xxs sm:text-xs text-slate-400 uppercase tracking-widest mt-1 font-mono">No Doomscrolling</span>
+            <span className="block text-xl sm:text-2xl font-bold text-cyber-lime">Consistent Cohorts</span>
+            <span className="block text-xxs sm:text-xs text-slate-400 uppercase tracking-widest mt-1 font-mono">No Selection Anxiety</span>
           </div>
           <div className="p-3 text-center">
-            <span className="block text-xl sm:text-2xl font-bold text-cyber-lime">Visual Cards</span>
-            <span className="block text-xxs sm:text-xs text-slate-400 uppercase tracking-widest mt-1 font-mono">Rule-Based Coordination</span>
+            <span className="block text-xl sm:text-2xl font-bold text-cyber-lime">Low-Pressure Drills</span>
+            <span className="block text-xxs sm:text-xs text-slate-400 uppercase tracking-widest mt-1 font-mono">At-Home Screen Breaks</span>
           </div>
           <div className="p-3 text-center">
-            <span className="block text-xl sm:text-2xl font-bold text-cyber-lime">Private Intro</span>
-            <span className="block text-xxs sm:text-xs text-slate-400 uppercase tracking-widest mt-1 font-mono">Meet Coach Personally</span>
+            <span className="block text-xl sm:text-2xl font-bold text-cyber-lime">Whistle-Free Play</span>
+            <span className="block text-xxs sm:text-xs text-slate-400 uppercase tracking-widest mt-1 font-mono">Visual Buzzer Signals</span>
           </div>
         </div>
 
       </section>
 
+      {/* Clubhouse Section (Social Calendar) */}
+      <section id="clubhouse-section" className="py-16 border-t border-white/5 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full bg-white/[0.005]">
+        <div className="max-w-3xl mx-auto text-center mb-12">
+          <span className="text-xs font-mono text-cyan-400 uppercase tracking-widest font-bold">The Huddle Clubhouse</span>
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-white mt-2">
+            Weekly Social Outlets
+          </h2>
+          <p className="text-xs sm:text-sm text-soft-gray mt-3 leading-relaxed">
+            Team bonding doesn't stop on the grass. We host structured, sensory-friendly off-field activities every week. Click on each day to reveal events, social battery meters, and accommodations.
+          </p>
+        </div>
+
+        <ClubSocialCalendar />
+      </section>
+
       {/* Predictability Section - 12-Week Roadmap */}
       <section id="timeline-section" className="py-16 border-t border-white/5 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="max-w-3xl mx-auto text-center mb-12">
-          <span className="text-xs font-mono text-cyan-400 uppercase tracking-widest font-bold">Predictable Growth</span>
+          <span className="text-xs font-mono text-cyan-400 uppercase tracking-widest font-bold">Structured Journey</span>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-white mt-2">
-            The 12-Week Progression Roadmap
+            The 12-Week Season Roadmap
           </h2>
           <p className="text-xs sm:text-sm text-soft-gray mt-3 leading-relaxed">
-            Team bonding is a gradual process. Our monthly phases ease you from individual mechanics to 1-on-1 partner pairing, concluding in cooperative 3-on-3 league scrimmages.
+            Building connections takes time. Our monthly phases gradually ease you from individual physics patterns to partner throwing routines, leading up to cooperative league huddles.
           </p>
         </div>
 
@@ -147,7 +169,7 @@ export default function Home() {
             Doomscroll Alternatives
           </h2>
           <p className="text-xs sm:text-sm text-soft-gray mt-3 leading-relaxed">
-            Trade passive scrolling loops for quick, low-pressure huddle homework. Complete physical reaction grabs, playbook designs, or quiet bedroom fitness tasks.
+            Swap phone screen scrolling for quick, low-pressure huddle homework. Complete physical coordination traps, playbook designs, or bedroom agility exercises to prep for Saturdays.
           </p>
         </div>
 
@@ -162,7 +184,7 @@ export default function Home() {
             The Communication Adaptor
           </h2>
           <p className="text-xs sm:text-sm text-soft-gray mt-3 leading-relaxed">
-            Coaches and teammates customize weekly sessions according to your daily social battery. Snapping between quiet visual cards and small huddle planning ensures you play without strain.
+            Whether you want to play silently using visual play cards, practice in structured pairs, or call plays in the huddle, we adjust player coordination to match your comfort levels.
           </p>
         </div>
 
@@ -177,7 +199,7 @@ export default function Home() {
             Playbook Design Task
           </h2>
           <p className="text-xs sm:text-sm text-soft-gray mt-3 leading-relaxed">
-            Draw exact patterns for your receivers to study at home. Because every player operates under rules and coordinates on paths, on-field play is logical, repeatable, and completely structured.
+            Try drawing receiver patterns on our canvas field. When everyone runs pre-designed lines, coordination is predictable, repeatable, and completely logical—no social guessing required.
           </p>
         </div>
 
@@ -192,7 +214,7 @@ export default function Home() {
             Sensory Safety Guarantees
           </h2>
           <p className="text-xs sm:text-sm text-soft-gray mt-3 leading-relaxed">
-            Traditional athletic leagues can be overwhelming. We’ve rebuilt the flag football experience from the ground up to accommodate sensory profiles.
+            We prioritize visual cues, predictable schedules, and structured off-field settings so you can play without feeling sensory or social strain.
           </p>
         </div>
 
@@ -203,9 +225,9 @@ export default function Home() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
               </svg>
             </div>
-            <h4 className="text-sm font-bold text-white mb-2">Electronic Soft-Buzzers</h4>
+            <h4 className="text-sm font-bold text-white mb-2">Visual Buzzer Signals</h4>
             <p className="text-xs text-soft-gray leading-relaxed">
-              Traditional high-pitch metal whistles are banned. Coaches use silent visual flags and low-frequency handheld electronic buzzers.
+              Metal whistles can trigger auditory stress. Coaches coordinate using soft-frequency electronic handheld buzzers and visual flag signals instead.
             </p>
           </div>
 
@@ -229,7 +251,7 @@ export default function Home() {
             </div>
             <h4 className="text-sm font-bold text-white mb-2">Familiar Huddle Cohorts</h4>
             <p className="text-xs text-soft-gray leading-relaxed">
-              You play with the same small group (3-4 players) for the duration of the league. Building trust takes time, and consistency reduces routine changes.
+              Play with the same small group of 3-4 players for the duration of the league. Building trust takes time, and consistency reduces routine changes.
             </p>
           </div>
         </div>
